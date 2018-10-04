@@ -1,0 +1,18 @@
+{% if connections_list %}
+
+    <div class="list-group bg-info" >
+        {% for connection in connections_list %}
+            <a class="list-group-item list-group-item-info"
+               href="{% url 'mentorship:connection_detail' connection.id %}">
+                {{ connection }}
+                <span class="badge">Last active: {{ connection.last_active }}</span>
+            </a>
+        {% endfor %}
+    </div>
+
+
+{% else %}
+
+    There is nothing here.
+
+{% endif %}

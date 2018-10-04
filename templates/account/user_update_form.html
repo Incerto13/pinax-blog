@@ -1,0 +1,230 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    Profile Update
+{% endblock title %}
+
+
+{% block content %}
+
+﻿<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <![endif]-->
+    <title>Bootstrap user profile template</title>
+    <!-- BOOTSTRAP STYLE SHEET -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FONT-AWESOME STYLE SHEET FOR BEAUTIFUL ICONS -->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+     <!-- CUSTOM STYLE CSS -->
+    <style type="text/css">
+               .btn-social {
+            color: white;
+            opacity: 0.8;
+        }
+
+            .btn-social:hover {
+                color: white;
+                opacity: 1;
+                text-decoration: none;
+            }
+
+        .btn-facebook {
+            background-color: #3b5998;
+        }
+
+        .btn-twitter {
+            background-color: #00aced;
+        }
+
+        .btn-linkedin {
+            background-color: #0e76a8;
+        }
+
+        .btn-google {
+            background-color: #c32f10;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">HOME</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav ">
+                    <li><a href="#">INBOX</a></li>
+                    <li><a href="#">BLOG</a></li>
+                    <li><a href="#">MENTORSHIP</a></li>
+                    <li><a href="#">FORUMS</a></li>
+                    <li><a href="#">SEARCH</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <!-- NAVBAR CODE END -->
+
+<!-- Automatically Rendered Form
+
+  <h2>Profile Update Form</h2>
+  <form method="post">
+    {% csrf_token %}
+    {% for field in form %}
+      <p>
+        {{ field.label_tag }}<br>
+        {{ field }}
+        {% if field.help_text %}
+          <small style="color: grey">{{ field.help_text }}</small>
+        {% endif %}
+
+      </p>
+    {% endfor %}
+    <button type="submit">Save Changes</button>
+  </form>
+
+-->
+
+
+
+    <div class="container">
+        <section style="padding-bottom: 50px; padding-top: 50px;">
+            <div class="row">
+                  <form method="post">
+                    {% csrf_token %}
+
+                        {{ form.non_field_errors }}
+                        {{ form.source.errors }}
+                        {{ form.source }}
+
+                  <div class="col-md-4">
+
+                    <!-- <h3>Update Profile</h3> -->
+                    <img src="{{ user.image.url }}" class="img-rounded img-responsive" />
+                    <br />
+                    <br />
+
+                    {{ form.non_field_errors }}
+
+                    <div class="form-group col-md-8">
+                        {{ form.username.label_tag }}
+                        {{ form.username }}
+                    </div>
+
+                    <div class="form-group col-md-8">
+                        {{ form.first_name.label_tag }}
+                        {{ form.first_name }}
+                    </div>
+
+                    <div class="form-group col-md-8">
+                        {{ form.last_name.label_tag }}
+                        {{ form.last_name }}
+                    </div>
+
+                    <div class="form-group col-md-8">
+                        {{ form.email.label_tag }}
+                        {{ form.email }}
+                    </div>
+
+                    <div class="form-group col-md-8">
+                        {{ form.city.label_tag }}
+                        {{ form.city }}
+                    </div>
+
+                    <div class="form-group col-md-8">
+                        {{ form.zipcode.label_tag }}
+                        {{ form.zipcode }}
+                    </div>
+
+                    <div class="form-group col-md-8">
+                        {{ form.state.label_tag }}
+                        {{ form.state }}
+                    </div>
+
+                    </div>
+
+                <div class="col-md-8">
+
+                    <div class="alert alert-info">
+                        <h2>User Bio : </h2>
+                            {{ form.bio }}
+                    </div>
+
+
+                    <div class="form-group col-md-8">
+                        {{ form.organization.label_tag }}<br/>
+                        {{ form.organization }}
+                    </div>
+
+                    <div class="form-group col-md-8">
+                        {{ form.tags.label_tag }}<br/>
+                        {{ form.tags }}
+                        <small style="color: grey">
+                            {{ form.tags.help_text }}
+                        </small>
+                    </div>
+
+                    <div class="form-group col-md-8">
+                        {{ form.image.label_tag }}<br/>
+                        {{ form.image }}
+                    </div>
+
+                    <div class="form-group col-md-8">
+                        {{ form.birth_date.label_tag }}<br/>
+                        {{ form.birth_date }}
+                    </div>
+
+                    <div class="form-group col-md-8">
+                        {{ form.country.label_tag }}<br/>
+                        {{ form.country }}
+                    </div>
+
+                    <div class="form-group col-md-8">
+                        <br/>
+                        <button type="submit" class="btn btn-primary">
+                            Save Changes</button>
+                    </div>
+
+                </form>
+
+                 </div>
+
+
+
+                </div>
+
+
+
+
+            </div>
+            <!-- ROW END -->
+
+
+        </section>
+        <!-- SECTION END -->
+    </div>
+    <!-- CONATINER END -->
+
+    <!-- REQUIRED SCRIPTS FILES -->
+    <!-- CORE JQUERY FILE -->
+    <script src="assets/js/jquery-1.11.1.js"></script>
+    <!-- REQUIRED BOOTSTRAP SCRIPTS -->
+    <script src="assets/js/bootstrap.js"></script>
+</body>
+
+</html>
+
+
+{% endblock %}

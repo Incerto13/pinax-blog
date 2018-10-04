@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../tutorial_Blogwebsite/.idea/blogwebsite.iml" filepath="$PROJECT_DIR$/../../tutorial_Blogwebsite/.idea/blogwebsite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/bpNetwork.iml" filepath="$PROJECT_DIR$/.idea/bpNetwork.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../tutorial_Tictactoe/.idea/tictactoe.iml" filepath="$PROJECT_DIR$/../../tutorial_Tictactoe/.idea/tictactoe.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home: {{ user.username }}
+{% endblock %}
+
+{% block content %}
+    <h2 class="text-primary">Welcome, {{ user.username }}</h2>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Feed... coming soon</h3>
+
+        </div>
+
+        <div class="col-md-6">
+            <h3>Pending Connection Requests</h3>
+
+            {% if pending_requests %}
+                <div class="list-group">
+                    {% for pen_req in pending_requests %}
+                        <a class="list-group-item" href="{% url 'mentorship:accept_connection' id=pen_req.id %}">
+                            {{ pen_req.from_user.username }} would like you to be his/her mentor :).
+                        </a>
+                    {% endfor %}
+                </div>
+
+            {% else %}
+                <p>You have no pending connection requests.</p>
+            {% endif %}
+
+            <h3>Current Connections</h3>
+
+            {% include "account/connection_list_snippet.html" with connections_list=my_connections %}
+
+            <p>Click below to find a new mentor.</p>
+            <p>
+                <a class="btn btn-primary"
+                   href="{% url 'mentorship:new_connection_request' %}">Connect with a Mentor</a>
+            </p>
+
+
+        </div>
+
+
+</div>
+
+{% endblock %}

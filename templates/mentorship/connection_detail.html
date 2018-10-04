@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    {{ connection }}
+{% endblock title %}
+
+
+{% block content %}
+
+<p><strong>{{ connection.mentor.first_name }} {{ connection.mentor.last_name }}</strong>
+    is currently mentoring <strong>{{ connection.mentee.first_name }} {{ connection.mentee.last_name }}
+    </strong>.</p>
+
+
+{% endblock %}

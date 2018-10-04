@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    New Connection
+{% endblock %}
+
+{% block content %}
+
+    <form method="post" action="{% url 'mentorship:new_connection_request' %}">
+        {{ form | crispy }}
+
+        {% csrf_token %}
+        <button type="submit">Send the request</button>
+    </form>
+
+{% endblock %}
