@@ -25,7 +25,7 @@ urlpatterns = [
     url(r'^messages/', include('pinax.messages.urls', namespace='pinax_messages')),
     url(r'^forums/', include('pinax.forums.urls', namespace='pinax_forums')),
     url(r'^connections/', include('mentorship.urls')),
-    url(r'^blog/', include('pinax.blog.urls', namespace='pinax_blog')),
+    #url(r'^blog/', include('pinax.blog.urls', namespace='pinax_blog')),
     url(r'^/blog/users/(?P<username>[-\w]+)/', include('pinax.blog.urls', namespace='pinax_blog')),
     url(r'^ajax/images/', include('pinax.images.urls', namespace='pinax_images')),
     url(r'^$', views.welcome, name="bpNetwork_welcome"),
